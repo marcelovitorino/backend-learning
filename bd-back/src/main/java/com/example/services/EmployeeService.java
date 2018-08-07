@@ -14,6 +14,8 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository repository;
 	
+	
+	/*
 	public List<EmployeeModel> findAll() {
 		return repository.findAll();
 	}
@@ -22,11 +24,15 @@ public class EmployeeService {
 		return repository.findOne(id);
 	}
 	
-	public void save(EmployeeModel post) {
-		repository.createEmployee(post);
+	**/ 
+	
+	public EmployeeModel save(EmployeeModel employee) {
+		repository.save(employee);
+		
+		return employee;
 	}
 	
 	public void delete(Long id) {
-		repository.deleteEmployee(id);
+		repository.deleteById(id);
 	}
 }

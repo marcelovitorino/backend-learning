@@ -1,8 +1,5 @@
-package com.example.demo;
+package springboot;
 
-
-
-  
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -25,6 +22,6 @@ import com.example.model.EmployeeModel;
 public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(EmployeeModel.class, args);
+        SpringApplication.run(Main.class, args);
     }
 }

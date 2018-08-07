@@ -10,22 +10,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EMPLOYEES")
+@Table(name = "Employees")
 public class EmployeeModel implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EMP_ID")
+	@Column(name = "empId")
 	private Long empId;
-
+	
+	@Column(name = "name", nullable = true)
 	private String name;
 
+	@Column(name = "department", nullable = true)
 	private String department;
 
+	@Column(name = "salary", nullable = true)
 	private Long salary;
 
-	@Column(name = "JOINED_ON")
-	private Date joinedOn;
+	
+	
+	public EmployeeModel(){
+		
+	}
 
 	public Long getEmpId() {
 		return empId;
@@ -59,17 +65,10 @@ public class EmployeeModel implements Serializable {
 		this.salary = salary;
 	}
 
-	public Date getJoinedOn() {
-		return joinedOn;
-	}
-
-	public void setJoinedOn(Date joinedOn) {
-		this.joinedOn = joinedOn;
-	}
 
 	@Override
 	public String toString() {
 
-		return this.empId + " | " + this.name + " | " + this.department + " | " + this.salary + " | " + this.joinedOn;
+		return this.empId + " | " + this.name + " | " + this.department + " | " + this.salary;
 	}
 }
